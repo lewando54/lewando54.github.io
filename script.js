@@ -126,6 +126,7 @@ function localize(newlang){
         workWrapper.className = 'work-wrapper'
         workWrapper.href = work.url
         workWrapper.target = '_blank'
+        workWrapper.rel = 'noopener'
 
         let img = document.createElement('img')
         img.className = 'work-thumbnail'
