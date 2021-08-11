@@ -73,12 +73,17 @@ document.querySelector('.hamburger-wrap').addEventListener('click', e => {
     toggleMenu()
 })
 
-let menuVisible = true
+let menuVisible = false
 
 function toggleMenu(){
     let menu = document.querySelector('header')
+    let lines = document.querySelectorAll('.hamburger-line')
+    for(let i = 1; i<=lines.length; i++){
+        lines[i-1].classList.toggle('line--'+i)
+    }
+    let rects = menu.getBoundingClientRect()
     if(menuVisible){
-        menu.style.left = '-10rem'
+        menu.style.left = '-'+rects.width+'px'
     }
     else{
         menu.style.left = '0'
@@ -137,3 +142,4 @@ function localize(newlang){
 }
 
 localize()
+toggleMenu()
