@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jakub Lewandowski</title>
     <script src="script.js" defer></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+    emailjs.init("user_RPhO9BN6uStTZmkWnLV7O");
+    })();
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -54,6 +61,28 @@
                 <h2 id="works-title"></h2>
                 <article id="works-body">
 
+                </article>
+            </section>
+            <section id="whatido-wrap" class="page page--whatido">
+                <h2 id="whatido-title"></h2>
+                <article id="whatido-body">
+
+                </article>
+            </section>
+            <section id="contact-wrap" class="page page--contact">
+                <h2 id="contact-title"></h2>
+                <article id="contact-body">
+                    <form action="" method="post">
+                        <div class="formdiv">
+                            <input type="text" class="input" name="mail" id="email" required>
+                            <label for="email" id="emaillabel"></label>
+                        </div>
+                        <div class="formdiv">
+                            <textarea name="messagebody" class="input" id="messagebody" cols="30" rows="3" required></textarea>
+                            <label for="messagebody" id="messagelabel"></label>
+                        </div>
+                        <input type="submit" id="submit" value="Wyślij">
+                    </form>
                 </article>
             </section>
             <footer class="page">

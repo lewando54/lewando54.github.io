@@ -53,6 +53,24 @@ let localisation = {
                     url: `http://goldthegame.epizy.com/`
                 }
             ]
+        },
+        whatido: {
+            pl: `Umiem programować w PHP, C++, JS i Pythonie (python na poziomie początkującym), oraz uczę się frameworka React.js. Mam też dobry zmysł estetyki i zwracam uwagę na najmniejsze szczegóły. CSS'a znam bardzo dobrze, ale SASS/LESS dopiero zaczynam. Node.js nie jest dla mnie zagadką oraz potrafię zarządzać systemami baz danych MongoDB oraz mySQL. Linux oraz Windows Server również nie są dla mnie dużym wyzwaniem. (I used arch btw)`,
+            en: `I can program in PHP, C++, JS and Python (python on beginner level), and I'm learning React.js. I also have a good sense of aesthetic and I care about tiniest details. I know CSS well, but I've just begun learning SASS/LESS etc. Node.js isn't a mystery for me and I can manage MongoDB and mySQL databases. Linux and Windows Server also are not a big challenge for me. (I used arch btw)`
+        },
+        contact: {
+            email: {
+                pl: 'Adres email',
+                en: 'Email address'
+            },
+            body: {
+                pl: 'Treść',
+                en: 'Message'
+            },
+            submit: {
+                pl: 'Wyślij',
+                en: 'Send'
+            }
         }
     }
 }
@@ -121,7 +139,6 @@ function localize(newlang){
     let worksBody = document.querySelector('#works-body')
     worksBody.innerHTML = localisation.sections.works[lang]
     localisation.sections.works.examples.forEach(work => {
-        console.log(work)
         let workWrapper = document.createElement('a')
         workWrapper.className = 'work-wrapper'
         workWrapper.href = work.url
@@ -140,7 +157,40 @@ function localize(newlang){
         workWrapper.appendChild(title)
         worksBody.appendChild(workWrapper)
     })
+    let whatidoTitle = document.querySelector('#whatido-title')
+    whatidoTitle.innerHTML = localisation.menu.whatido[lang]
+    let whatidoBody = document.querySelector('#whatido-body')
+    whatidoBody.innerHTML = localisation.sections.whatido[lang]
+    let contactTitle = document.querySelector('#contact-title')
+    contactTitle.innerHTML = localisation.menu.contact[lang]
+    let emailLabel = document.querySelector('#emaillabel')
+    emailLabel.innerHTML = localisation.sections.contact.email[lang]
+    let messageLabel = document.querySelector('#messagelabel')
+    messageLabel.innerHTML = localisation.sections.contact.body[lang]
+    let submit = document.querySelector('#submit')
+    submit.value = localisation.sections.contact.submit[lang]
 }
+
+
+
+let form = document.querySelector('form')
+
+form.addEventListener('submit', e=>{
+    e.preventDefault()
+
+    var templateParams = {
+        from_name: document.querySelector('#email').value,
+        message: document.querySelector('#messagebody').value
+    };
+
+    emailjs.send('Kontakt_webpage', 'template_3dgglvi', templateParams)
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
+})
+
 
 localize()
 toggleMenu()

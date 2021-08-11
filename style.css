@@ -108,8 +108,8 @@ main{
     gap: 1rem;
     min-height: 100vh;
     height: auto;
-    padding: 5rem;
-    font-size: 3rem;
+    padding: 0 5rem;
+    font-size: 2.5rem;
     text-align: justify;
 }
 
@@ -119,6 +119,14 @@ main{
     background: linear-gradient(45deg, rgb(41, 52, 53) 42%, rgb(60, 78, 80) 42%, rgb(60, 78, 80) 46%, rgb(41, 52, 53) 64%);
     background-size: 200% 200%;
     animation: rotate 4s linear infinite;
+}
+
+.page--whatido{
+    background-color: rgb(35, 52, 83);
+}
+
+article{
+    margin-bottom: 1rem;
 }
 
 @keyframes rotate {
@@ -180,7 +188,7 @@ ul{
     display: block;
     width: 8rem;
     height: 1px;
-    background-color: grey;
+    background-color: rgb(56, 56, 56);
 }
 
 footer{
@@ -221,6 +229,63 @@ footer{
     transform:rotate(-45deg) translate(1.3rem, -1.2rem);
 }
 
+form{
+    display: flex;
+    width: 50rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input{
+    width: 100%;
+    background: 0;
+    border: 0;
+    border-bottom: 3px solid var(--text-normal);
+    font-size: 3rem;
+    color: var(--text-normal);
+}
+
+#messagebody{
+    border: 3px solid var(--text-normal);
+}
+
+#submit{
+    background-color: var(--text-normal);
+    padding: 0.5rem;
+    border: 0;
+    border-radius: 15px;
+    font-size: 3rem;
+    width: 20rem;
+}
+
+.formdiv{
+    position: relative;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+label{
+    position: absolute;
+    transition: top 0.2s, font-size 0.2s;
+    left: 1rem;
+    top: 0;
+}
+
+.input:focus + #emaillabel, .input:valid + #emaillabel{
+    top: -60%;
+    font-size: 2rem;
+}
+
+.input:focus + #messagelabel, .input:valid + #messagelabel{
+    top: -20%;
+    font-size: 2rem;
+}
+
+.input:valid + #emaillabel{
+    top: -60%;
+    font-size: 2rem;
+}
+
 @media screen and (max-width: 1000px) {
     :root{
         font-size: 8px;
@@ -256,5 +321,7 @@ footer{
             background-position: 300%;
         }
     }
-    
+    form{
+        width: 30rem;
+    }
 }
