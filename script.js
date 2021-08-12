@@ -39,7 +39,7 @@ let localisation = {
                 {
                     title: {
                         pl: `Strona szkoły CKZiU w Brodnicy (MEN)`,
-                        en: `Schools CKZiU in Brodnica website`
+                        en: `Schools 'CKZiU in Brodnica' website`
                     },
                     thumbnail: `ckziu212.png`,
                     url: `http://teststrony.ckziubrodnica.pl/`

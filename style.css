@@ -365,4 +365,7 @@ label{
     form{
         width: 30rem;
     }
+    .nav__link--active::before{
+        top: 1.1rem;
+    }
 }
