@@ -171,7 +171,35 @@ function localize(newlang){
     submit.value = localisation.sections.contact.submit[lang]
 }
 
+function isInViewport(element) {
+    var rect = element.getBoundingClientRect();
+    var html = document.documentElement;
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || html.clientHeight) &&
+      rect.right <= (window.innerWidth || html.clientWidth)
+    );
+}
 
+function changeActiveSection(sectionName){
+    let title = document.querySelector('#'+sectionName+'-title')
+    let link = document.querySelector('#'+sectionName+'-link')
+    if(isInViewport(title)){
+        link.style.color = 'cyan'
+        link.classList.add('nav__link--active')
+    }else{
+        link.style.color = 'var(--text-normal)'
+        link.classList.remove('nav__link--active')
+    }
+}
+
+window.addEventListener('scroll', e => {
+    changeActiveSection('about')
+    changeActiveSection('works')
+    changeActiveSection('whatido')
+    changeActiveSection('contact')
+})
 
 let form = document.querySelector('form')
 
