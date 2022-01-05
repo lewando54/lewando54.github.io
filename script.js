@@ -51,6 +51,14 @@ let localisation = {
                     },
                     thumbnail: `gtg.png`,
                     url: `http://goldthegame.epizy.com/`
+                },
+                {
+                    title: {
+                        pl: `Aplikacja w stylu Omegle (czat tekstowy): Talk.io`,
+                        en: `Omegle text chat like app: Talk.io`
+                    },
+                    thumbnail: `talkio.png`,
+                    url: `https://talk-io54.herokuapp.com/`
                 }
             ]
         },
