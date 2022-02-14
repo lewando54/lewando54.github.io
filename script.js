@@ -42,7 +42,7 @@ let localisation = {
                         en: `Schools 'CKZiU in Brodnica' website`
                     },
                     thumbnail: `ckziu212.png`,
-                    url: `http://teststrony.ckziubrodnica.pl/`
+                    url: `http://ckziubrodnica.pl/`
                 },
                 {
                     title: {
